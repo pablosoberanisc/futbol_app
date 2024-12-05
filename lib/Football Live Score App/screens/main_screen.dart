@@ -13,22 +13,22 @@ class AppMainScreen extends StatefulWidget {
 class _AppMainScreenState extends State<AppMainScreen> {
   int currentTab = 0; // Controla la pestaña actualmente activa.
   final List<Widget> screens = [ // Lista de pantallas asociadas a cada pestaña.
-    const AppHomeScreen(),
-    const Scaffold(), // Placeholders para futuras pantallas.
-    const Scaffold(),
-    const Scaffold(),
+    const AppHomeScreen(), // Pantalla principal
+    const Scaffold(), // Placeholder para futuras pantallas
+    const Scaffold(), // Placeholder para futuras pantallas
+    const Scaffold(), // Placeholder para futuras pantallas
   ];
   final icons = [ // Lista de iconos para las pestañas.
-    Iconsax.home,
-    Iconsax.calendar_1,
-    Iconsax.chart,
-    Icons.person_outline
+    Iconsax.home, // Ícono de inicio
+    Iconsax.calendar_1, // Ícono de calendario
+    Iconsax.chart, // Ícono de gráficos
+    Icons.person_outline // Ícono de cuenta
   ];
   final titles = [ // Títulos asociados a las pestañas.
-    "Home",
-    "Calendar",
-    "Standing",
-    "Account",
+    "Home", // Título de la pestaña de inicio
+    "Calendar", // Título de la pestaña de calendario
+    "Standing", // Título de la pestaña de clasificación
+    "Account", // Título de la pestaña de cuenta
   ];
 
   @override
@@ -43,8 +43,8 @@ class _AppMainScreenState extends State<AppMainScreen> {
           boxShadow: [
             BoxShadow(
               color: Colors.black12.withOpacity(0.015), // Sombra sutil.
-              blurRadius: 8,
-              spreadRadius: 5,
+              blurRadius: 8, // Desenfoque de la sombra.
+              spreadRadius: 5, // Extensión de la sombra.
             ),
           ],
           borderRadius: const BorderRadius.vertical(
@@ -87,7 +87,7 @@ class MyBottomNavBarItems extends StatelessWidget {
     return GestureDetector(
       onTap: onTab, // Cambia la pestaña activa al hacer clic.
       child: AnimatedContainer(
-        duration: const Duration(milliseconds: 100), // Animación de cambio.
+        duration: const Duration(milliseconds: 100), // Duración de la animación de cambio.
         padding: const EdgeInsets.all(10), // Espaciado interno.
         decoration: BoxDecoration(
           color: isActive ? kprimaryColor : Colors.white, // Color según estado activo.
@@ -98,15 +98,15 @@ class MyBottomNavBarItems extends StatelessWidget {
         child: Column(
           children: [
             Icon(
-              icon, // Muestra el icono.
-              color: isActive ? Colors.white : Colors.grey.shade400, // Color según estado.
+              icon, // Muestra el icono correspondiente.
+              color: isActive ? Colors.white : Colors.grey.shade400, // Color según estado (activo o inactivo).
             ),
             if (isActive) // Muestra el título solo si está activo.
               Text(
                 title,
                 style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 14, // Tamaño del texto.
+                  color: Colors.white, // Color blanco para el texto del título.
+                  fontSize: 14, // Tamaño de la fuente del título.
                 ),
               )
           ],
@@ -115,3 +115,4 @@ class MyBottomNavBarItems extends StatelessWidget {
     );
   }
 }
+
